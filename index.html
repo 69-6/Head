@@ -132,7 +132,7 @@ async function pullFrom(code){
     return best;
   }catch(e){return null;}
 }
-/* image upload as ntfy attachment (expires ~3h on ntfy.sh) */
+/* image upload as ntfyattachment (expires ~3h on ntfy.sh) */
 async function compressImage(file,maxDim=720,quality=0.72){
   const dataUrl=await new Promise((res,rej)=>{const r=new FileReader();r.onload=()=>res(r.result);r.onerror=rej;r.readAsDataURL(file);});
   const img=await new Promise((res,rej)=>{const im=new Image();im.onload=()=>res(im);im.onerror=rej;im.src=dataUrl;});
